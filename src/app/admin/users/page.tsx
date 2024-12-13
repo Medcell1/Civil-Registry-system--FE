@@ -32,7 +32,6 @@ import { MainNav } from "@/components/main-nav"
 import { UserNav } from "@/components/user-nav"
 import axiosInstance from "@/utils/axiosInstance"
 import { District, User } from "@/app/@types"
-
 export default function UserManagementPage() {
   const [users, setUsers] = useState<User[]>([])
   const [loading, setLoading] = useState<boolean>(true)
@@ -83,7 +82,7 @@ export default function UserManagementPage() {
       })
       setUsers([...users, response.data])
       setOpen(false)
-      setNewUser({ username: '', password: '', role: 'SUPERVISOR', district: '' })
+      setNewUser({ username: '', password: '', role: 'SUPERVISOR', district: '' });
     } catch (error) {
       console.error(error)
       setError("Failed to add user. Please try again later.")
